@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title> Palindrome Application by Sanskar	</title>
+	<style>
+		* { font-size : 40px ; font-family : Times New Roman ; }
+		body { background-color : pink ; }
+	</style>
+</head>
+<body>
+<center>
+	<h1> Palindrome Application </h1>
+	<form onsubmit = "check()">
+		<input type = "text"  placeholder = "Enter string"  id = "str"  />
+		<br/><br/>
+		<input type = "submit"  value = "Check"/>
+	</form>
+	<h2 id = "msg" />
+
+	<script>
+		function check()
+		{
+			event.preventDefault();
+			let str = document.getElementById("str");
+			let msg = document.getElementById("msg");
+
+			if (str.value.trim() == "")
+			{
+				alert("String is empty");
+				msg.innerHTML = "";
+				str.value = "";
+				str.focus();
+				return ;
+			}
+			let n = str.value ; 
+			let ns = n.split("").reverse().join("");
+
+			if ( n == ns )
+				msg.innerHTML = "It is palindrome"; 
+			else 
+				msg.innerHTML = "It is not palindrome"; 
+				
+		
+			}
+
+	</script>
+</center>
+</body>
+</html>
